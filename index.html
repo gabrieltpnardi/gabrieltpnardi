@@ -1,0 +1,122 @@
+<!DOCTYPE html><html><head>
+  <script src="p5.min.js"></script>
+  <script src="p5.dom.min.js"></script>
+  <script src="p5.sound.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+
+</head>
+
+<body>
+
+    <div id="phaseOneWin">
+      <li>VOCÊ GANHOU!</li>
+      <p>Parabéns! Não foi contaminade</p>
+      <p>Escolha uma recompensa para te ajudar na segunda fase:</p>
+      <button id="alcoolP1">Alcool em Gel</button>
+      <button id="mascaraP1">Mascara</button>
+      <button id="remedioP1">Remédio</button>
+    </div>
+
+    <div id="phaseOneLost">
+      <li>Foi contaminado :(</li>
+      <p>Infelizmente você não conseguiu se prevenir contra a COVID-19</p>
+      <p>Mas podemos te ajudar para na proxima vez que sair para trabalhar não correr riscos</p>
+      <a href="https://g1.globo.com/" target="_blank">Acesse para saber como se prevenir</a>
+      <button id="tryAgainP1">Tentar novamente</button>
+    </div>
+
+    <div id="phaseTwoWin">
+      <li>VOCÊ GANHOU!</li>
+      <p>Parabéns! Não foi contaminade</p>
+      <button id="contP2">Continuar</button>
+    </div>
+
+    <div id = "avisoAlcool">
+      <p>O alcool em gel te salvou</p>
+      <p>Mas agora ele acabou, então cuidado!</p>
+      <button id="closeBar">Voltar ao jogo</button>
+    </div>
+
+    <div id="phaseTwoLost">
+      <li>Foi contaminado :(</li>
+      <p>Infelizmente você não conseguiu se prevenir contra a COVID-19</p>
+      <p>É um vírus muito contagioso, blablabla</p>
+      <button id="tryAgainP2">Voltar para a 1ª fase</button>
+    </div>
+
+    <div id="phaseThreeWin">
+      <li>VOCÊ GANHOU!</li>
+      <p>Parabéns! Não foi contaminade</p>
+      <button id="contP3">Continuar</button>
+    </div>
+
+    <div id = "avisoMascara">
+      <p>A mascara te salvou</p>
+      <p>Mas agora ele acabou, então cuidado!</p>
+      <button id="closeBarMascara">Voltar ao jogo</button>
+    </div>
+
+    <div id="phaseThreeLost">
+      <li>Foi contaminado :(</li>
+      <p>Infelizmente você não conseguiu se prevenir contra a COVID-19</p>
+      <p>É um vírus muito contagioso, blablabla</p>
+      <button id="tryAgainP3">Voltar para a 1ª fase</button>
+    </div>
+
+    <div id="phaseFourWin">
+      <li>VOCÊ GANHOU!</li>
+      <p>Parabéns! Não foi contaminade</p>
+      <button id="contP4">Continuar</button>
+    </div>
+
+    <div id="phaseFourLost">
+      <li>Foi contaminado :(</li>
+      <p>Infelizmente você não conseguiu se prevenir contra a COVID-19, e o remedio não funciona pq não existe remedio leleleel</p>
+      <button id="tryAgainP4">Voltar para a 1ª fase</button>
+      <a href="https://g1.globo.com/" target="_blank">Acesse para saber mais</a>
+    </div>
+
+    <div id="phaseFiveWin">
+      <li>VOCÊ GANHOU!</li>
+      <p>Parabéns! Não foi contaminade</p>
+      <button id="contP5">Continuar</button>
+    </div>
+
+    <div id = "avisoUTI">
+      <p>Foi contamidade, mas conseguiu uma vaga na UTI</p>
+      <p>Mas agora muito cuidado, não há mais leitos</p>
+      <button id="closeBarUTI">Voltar ao jogo</button>
+    </div>
+
+    <p id="timer"></p>
+
+    <div id = "avisoUTILotada">
+      <p>As UTI's estão lotadas :´( </p>
+      <button id="closeBarUTILotada">Voltar ao jogo</button>
+    </div>
+
+    <div id="phaseFiveLost">
+      <li>Foi contaminado :(</li>
+      <p>Infelizmente você não conseguiu se prevenir contra a COVID-19, e infelizmente os leitos de uti balbalbal</p>
+      <button id="tryAgainP5">Voltar para a 1ª fase</button>
+      <a href="https://g1.globo.com/" target="_blank">Acesse para saber mais</a>
+    </div>
+
+    <div id="phaseSixWin">
+      <li>VOCÊ GANHOU!</li>
+      <p>Parabéns! Não foi contaminade</p>
+      <button id="contP6">Continuar</button>
+    </div>
+
+    <div id="phaseSixLost">
+      <li>Foi contaminado :(</li>
+      <p>subnofiticação blablabla, na proxima não tem mais </p>
+      <button id="tryAgainP6">Tentar novamente</button>
+      <a href="https://g1.globo.com/" target="_blank">Acesse para saber mais</a>
+    </div>
+    <script src="cell.js"></script>
+    <script src="initializer.js"></script>
+
+    </body>
+  </html>

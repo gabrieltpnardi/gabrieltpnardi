@@ -1,0 +1,920 @@
+@font-face {
+  font-family: "SyneMono";
+  src: url("./fonts/SyneMono-Regular.ttf")
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  background-image: url(fundo.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+canvas {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.start{
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  background-color: transparent;
+  color:white; 
+  padding: 16px;
+  border: 1px solid #FFF;
+  min-width: 200px;
+  text-align: center;
+  z-index: 10
+}
+
+.start:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#phaseOneWin {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  position: absolute;
+  z-index: 10;
+}
+
+#phaseOneWin {
+  background: #28256B;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+}
+
+#phaseOneWin > li {
+  font-family: "SyneMono", serif;
+  list-style: none;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #FFF;
+
+}
+
+#phaseOneWin > p {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#phaseOneWin #alcoolP1, #mascaraP1, #remedioP1 {
+  margin-top: 48px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 8px 80px;
+  transition: all .5s linear;
+}
+
+#phaseOneWin #alcoolP1:hover, #mascaraP1:hover, #remedioP1:hover {
+  background: #FFF;
+  color: #333;
+}
+
+#phaseOneLost {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  position: absolute;
+  z-index: 10;
+}
+
+#phaseOneLost {
+  background: #28256B;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+}
+
+#phaseOneLost > li {
+  font-family: "SyneMono", serif;
+  list-style: none;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #FFF;
+
+}
+
+#phaseOneLost > p {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#phaseOneLost > a {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#phaseOneLost #tryAgainP1 {
+  margin-top: 48px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 8px 80px;
+  transition: all .5s linear;
+}
+
+#phaseOneLost #truAgainP1:hover {
+  background: #FFF;
+  color: #333;
+}
+
+#phaseTwoWin {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  position: absolute;
+  z-index: 10;
+}
+
+#phaseTwoWin {
+  background: #28256B;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+}
+
+#phaseTwoWin > li {
+  font-family: "SyneMono", serif;
+  list-style: none;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #FFF;
+
+}
+
+#phaseTwoWin > p {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#phaseTwoWin #contP2 {
+  margin-top: 48px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 8px 80px;
+  transition: all .5s linear;
+}
+
+#phaseTwoWin #contP2:hover {
+  background: #FFF;
+  color: #333;
+}
+
+#avisoAlcool{
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #28256B;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+  z-index: 10;
+}
+
+#avisoAlcool > p {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#avisoAlcool #closeBar {
+  margin-top: 48px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 8px 80px;
+  transition: all .5s linear;
+}
+
+#avisoAlcool #closeBar:hover {
+  background: #FFF;
+  color: #333;
+}
+
+#phaseTwoLost {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  position: absolute;
+  z-index: 10;
+}
+
+#phaseTwoLost {
+  background: #28256B;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+}
+
+#phaseTwoLost > li {
+  font-family: "SyneMono", serif;
+  list-style: none;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #FFF;
+
+}
+
+#phaseTwoLost > p {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#phaseTwoLost > a {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#phaseTwoLost #tryAgainP2 {
+  margin-top: 48px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 8px 80px;
+  transition: all .5s linear;
+}
+
+#phaseTwoLost #truAgainP2:hover {
+  background: #FFF;
+  color: #333;
+}
+
+#phaseThreeWin {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  position: absolute;
+  z-index: 10;
+}
+
+#phaseThreeWin{
+  background: #28256B;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+}
+
+#phaseThreeWin > li {
+  font-family: "SyneMono", serif;
+  list-style: none;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #FFF;
+}
+
+#phaseThreeWin > p {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#phaseThreeWin #contP3 {
+  margin-top: 48px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 8px 80px;
+  transition: all .5s linear;
+}
+
+#phaseThreeWin #contP3:hover {
+  background: #FFF;
+  color: #333;
+}
+
+#avisoMascara{
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #28256B;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+  z-index: 10;
+}
+
+#avisoMascara > p {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#avisoMascara #closeBarMascara {
+  margin-top: 48px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 8px 80px;
+  transition: all .5s linear;
+}
+
+#avisoMascara #closeBarMascara:hover {
+  background: #FFF;
+  color: #333;
+}
+
+#phaseThreeLost {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  position: absolute;
+  z-index: 10;
+}
+
+#phaseThreeLost {
+  background: #28256B;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+}
+
+#phaseThreeLost > li {
+  font-family: "SyneMono", serif;
+  list-style: none;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #FFF;
+
+}
+
+#phaseThreeLost > p {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#phaseThreeLost > a {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#phaseThreeLost #tryAgainP3 {
+  margin-top: 48px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 8px 80px;
+  transition: all .5s linear;
+}
+
+#phaseThreeLost #truAgainP3:hover {
+  background: #FFF;
+  color: #333;
+}
+
+#phaseFourWin {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  position: absolute;
+  z-index: 10;
+}
+
+#phaseFourWin {
+  background: #28256B;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+}
+
+#phaseFourWin > li {
+  font-family: "SyneMono", serif;
+  list-style: none;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #FFF;
+
+}
+
+#phaseFourWin > p {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#phaseFourWin #contP4 {
+  margin-top: 48px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 8px 80px;
+  transition: all .5s linear;
+}
+
+#phaseFourWin #contP4:hover {
+  background: #FFF;
+  color: #333;
+}
+
+#phaseFourLost {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  position: absolute;
+  z-index: 10;
+}
+
+#phaseFourLost {
+  background: #28256B;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+}
+
+#phaseFourLost > li {
+  font-family: "SyneMono", serif;
+  list-style: none;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #FFF;
+
+}
+
+#phaseFourLost > p {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#phaseFourLost > a {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+
+#phaseFourLost #tryAgainP4 {
+  margin-top: 48px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 8px 80px;
+  transition: all .5s linear;
+}
+
+#phaseFourLost #truAgainP4:hover {
+  background: #FFF;
+  color: #333;
+}
+
+#phaseFiveWin {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  position: absolute;
+  z-index: 10;
+}
+
+#phaseFiveWin {
+  background: #28256B;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+}
+
+#phaseFiveWin > li {
+  font-family: "SyneMono", serif;
+  list-style: none;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #FFF;
+
+}
+
+#phaseFiveWin > p {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#phaseFiveWin #contP5 {
+  margin-top: 48px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 8px 80px;
+  transition: all .5s linear;
+}
+
+#phaseFiveWin #contP5:hover {
+  background: #FFF;
+  color: #333;
+}
+
+#phaseFiveLost {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  position: absolute;
+  z-index: 10;
+}
+
+#phaseFiveLost {
+  background: #28256B;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+}
+
+#phaseFiveLost > li {
+  font-family: "SyneMono", serif;
+  list-style: none;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #FFF;
+
+}
+
+#phaseFiveLost > p {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#phaseFiveLost > a {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+
+#phaseFiveLost #tryAgainP5 {
+  margin-top: 48px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 8px 80px;
+  transition: all .5s linear;
+}
+
+#phaseFiveLost #truAgainP5:hover {
+  background: #FFF;
+  color: #333;
+}
+
+#avisoUTI{
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #28256B;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+  z-index: 10;
+}
+
+#avisoUTI > p {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#avisoUTI #closeBarUTI {
+  margin-top: 48px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 8px 80px;
+  transition: all .5s linear;
+}
+
+#avisoUTI #closeBarUTI:hover {
+  background: #FFF;
+  color: #333;
+}
+
+
+#timer {
+  font-family: "SyneMono", serif;
+  background: #28256B;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: bold;
+ 
+}
+
+#avisoUTILotada{
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #28256B;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+  z-index: 10;
+}
+
+#avisoUTILotada > p {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#avisoUTILotada #closeBarUTILotada {
+  margin-top: 48px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 8px 80px;
+  transition: all .5s linear;
+}
+
+#avisoUTILotada #closeBarUTILotada:hover {
+  background: #FFF;
+  color: #333;
+}
+
+#phaseSixWin {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  position: absolute;
+  z-index: 10;
+}
+
+#phaseSixWin {
+  background: #28256B;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+}
+
+#phaseSixWin > li {
+  font-family: "SyneMono", serif;
+  list-style: none;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #FFF;
+
+}
+
+#phaseSixWin > p {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#phaseSixWin #contP6 {
+  margin-top: 48px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 8px 80px;
+  transition: all .5s linear;
+}
+
+#phaseSixWin #contP6:hover {
+  background: #FFF;
+  color: #333;
+}
+
+#phaseSixLost {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  position: absolute;
+  z-index: 10;
+}
+
+#phaseSixLost {
+  background: #28256B;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+}
+
+#phaseSixLost > li {
+  font-family: "SyneMono", serif;
+  list-style: none;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #FFF;
+
+}
+
+#phaseSixLost > p {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#phaseSixLost > a {
+  font-family: "SyneMono", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  color: #FFF;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#phaseSixLost #tryAgainP6 {
+  margin-top: 48px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 8px 80px;
+  transition: all .5s linear;
+}
+
+#phaseSixLost #truAgainP6:hover {
+  background: #FFF;
+  color: #333;
+}
